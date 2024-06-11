@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Editar Usuário</h1>
+    <form action="{{ url_for('usuario.update_usuario', cpf=usuario[0]) }}"" method="post">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" value="{{ usuario[0] }}" readonly><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" value="{{ usuario[1] }}"><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ usuario[2] }}"><br>
+
+        <label for="registro">Registro:</label>
+        <input type="date" id="registro" name="registro" value="{{ usuario[3] }}"><br>
+        
+        <button type="submit">Atualizar</button>
+    </form>
+    <a id="btn_default" href="{{ url_for('usuario.list_usuarios') }}">Voltar</a>
+</body>
+</html>

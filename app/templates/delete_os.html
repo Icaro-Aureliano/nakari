@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deletar Ordem de Serviço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Deletar Ordem de Serviço</h1>
+    <form action="/os/delete/{{ ordem[0] }}" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <p>Tem certeza que deseja deletar a ordem de serviço para {{ ordem[2] }}?</p>
+        <input type="submit" value="Deletar">
+    </form>
+    <a id="btn_default" href="{{ url_for('os.list_os') }}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Funcionário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Visualizar Funcionário</h1>
+    <p><strong>CPF:</strong> {{ funcionario[0] }}</p>
+    <p><strong>Nome:</strong> {{ funcionario[1] }}</p>
+    <p><strong>Endereço:</strong> {{ funcionario[2] }}</p>
+    <p><strong>Admissão:</strong> {{ funcionario[3] }}</p>
+    <p><strong>RG:</strong> {{ funcionario[4] }}</p>
+    <p><strong>Salário:</strong> {{ funcionario[5] }}</p>
+    <a id="btn_default" href="{{ url_for('funcionarios.list_funcionarios') }}">Voltar</a>
+</body>
+</html>

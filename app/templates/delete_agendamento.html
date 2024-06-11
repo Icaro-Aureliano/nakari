@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Agendamento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Deletar Agendamento</h1>
+    <p>Tem certeza que deseja deletar o agendamento?</p>
+    <p><strong>Código:</strong> {{ agendamento[0] }}</p>
+    <p><strong>Data de Emissão:</strong> {{ agendamento[1] }}</p>
+    <p><strong>Data de Agendamento:</strong> {{ agendamento[2] }}</p>
+    <p><strong>Status:</strong> {{ agendamento[3] }}</p>
+    <p><strong>Hora Inicial:</strong> {{ agendamento[4] }}</p>
+    <p><strong>Hora Final:</strong> {{ agendamento[5] }}</p>
+    <p><strong>CPF do Morador:</strong> {{ agendamento[6] }}</p>
+    <p><strong>Código do Espaço:</strong> {{ agendamento[7] }}</p>
+    <form action="{{ url_for('agendamento.delete_agendamento', codigo=agendamento[0]) }}" method="post">
+        <button type="submit">Deletar</button>
+    </form>
+    <a id="btn_default" href="{{ url_for('agendamento.list_agendamentos') }}">Voltar</a>
+</body>
+</html>

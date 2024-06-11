@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Visualizar Usuário</h1>
+    <p><strong>CPF:</strong> {{ usuario[0] }}</p>
+    <p><strong>Senha:</strong> {{ usuario[1] }}</p>
+    <p><strong>Nome:</strong> {{ usuario[2] }}</p>
+    <p><strong>Registro:</strong> {{ usuario[3] }}</p>
+    <a id="btn_default" href="{{ url_for('usuario.list_usuarios') }}">Voltar</a>
+</body>
+</html>

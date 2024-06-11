@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Terceiros</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Terceiros</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CNPJ</th>
+                <th>Razão Social</th>
+                <th>Endereço</th>
+                <th>Preço</th>
+                <th>Serviço</th>
+                <th>Status</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for terceiro in terceiros %}
+            <tr>
+                <td>{{ terceiro[0] }}</td>
+                <td>{{ terceiro[1] }}</td>
+                <td>{{ terceiro[2] }}</td>
+                <td>{{ terceiro[3] }}</td>
+                <td>{{ terceiro[4] }}</td>
+                <td>{{ terceiro[5] }}</td>
+                <td>{{ terceiro[6] }}</td>
+                <td>{{ terceiro[7] }}</td>
+                <td>
+                    <a href="{{url_for('terceiros.view_terceiro', coc=terceiro[0])}}">Visualizar</a>
+                    <a href="{{ url_for('terceiros.update_terceiro', coc=terceiro[0]) }}">Editar</a>
+                    <a href="{{ url_for('terceiros.delete_terceiro', coc=terceiro[0]) }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('terceiros.create_terceiro') }}">Criar Novo Terceiro</a>
+</body>
+</html>

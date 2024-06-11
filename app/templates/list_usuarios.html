@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>Registro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <td>{{ usuario[3] }}</td>
+                <td>
+                    <a href="{{ url_for('usuario.view_usuario', cpf=usuario[0]) }}">Visualizar</a>
+                    <a href="{{ url_for('usuario.update_usuario', cpf=usuario[0]) }}">Editar</a>
+                    <a href="{{ url_for('usuario.delete_usuario', cpf=usuario[0]) }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('usuario.create_usuario') }}">Criar Novo Usuario</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+main.py
+app/
+    __init__.py
+    static/
+        (nenhum arquivo)
+    templates/
+        (htmls já feitos anteriormente)
+    controllers/
+        __init__.py
+        agendamento_controller.py
+        espaco_controller.py
+        usuario_controller.py
+        moradores_controller.py
+        funcionarios_controller.py
+        terceiros_controller.py
+        os_controller.py
+    models/
+        __init__.py
+        agendamento.py
+        espaco.py
+        usuario.py
+        moradores.py
+        funcionarios.py
+        terceiros.py
+        os.py
+    repositories/
+        __init__.py
+        agendamento_repository.py
+        espaco_repository.py
+        usuario_repository.py
+        moradores_repository.py
+        funcionarios_repository.py
+        terceiros_repository.py
+        os_repository.py
+    services/
+        __init__.py
+        agendamento_service.py
+        espaco_service.py
+        usuario_service.py
+        moradores_service.py
+        funcionarios_service.py
+        terceiros_service.py
+        os_service.py
+    config.py

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Ordens de Serviço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Ordens de Serviço</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Serviço</th>
+                <th>Descrição</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Tempo</th>
+                <th>Modalidade</th>
+                <th>Preço</th>
+                <th>Nome do Prestador</th>
+                <th>CNPJ do Prestador</th>
+                <th>Observações</th>
+                <th>Apartamento</th>
+                <th>CPF do Morador</th>
+                <th>CPF do Funcionário</th>
+                <th>CNPJ do Terceiro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ordem in os_list %}
+            <tr>
+                <td>{{ ordem[0] }}</td>
+                <td>{{ ordem[1] }}</td>
+                <td>{{ ordem[2] }}</td>
+                <td>{{ ordem[3] }}</td>
+                <td>{{ ordem[4] }}</td>
+                <td>{{ ordem[5] }}</td>
+                <td>{{ ordem[6] }}</td>
+                <td>{{ ordem[7] }}</td>
+                <td>{{ ordem[8] }}</td>
+                <td>{{ ordem[9] }}</td>
+                <td>{{ ordem[10] }}</td>
+                <td>{{ ordem[11] }}</td>
+                <td>{{ ordem[12] }}</td>
+                <td>{{ ordem[13] }}</td>
+                <td>{{ ordem[14] }}</td>
+                <td>
+                    <a href="/os/{{ ordem[0] }}">Visualizar</a>
+                    <a href="/os/update/{{ ordem[0] }}">Editar</a>
+                    <a href="/os/delete/{{ ordem[0] }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('os.create_os') }}">Criar Nova Ordem de Serviço</a>
+</body>
+</html>

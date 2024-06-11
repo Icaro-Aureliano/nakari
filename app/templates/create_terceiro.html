@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Terceiro</title>
+</head>
+<body>
+    <h1>Criar Terceiro</h1>
+    <form action="{{ url_for('terceiros.create_terceiro') }}" method="POST">
+        <label for="coc">CNPJ:</label>
+        <input type="text" id="coc" name="coc"><br>
+        <label for="razao">Razão Social:</label>
+        <input type="text" id="razao" name="razao"><br>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco"><br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco"><br>
+        <label for="servico">Serviço:</label>
+        <input type="text" id="servico" name="servico"><br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone"><br>
+        <input type="submit" value="Criar">
+    </form>
+    <a href="{{ url_for('terceiros.list_terceiros') }}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Morador</title>
+</head>
+<body>
+    <h1>Criar Morador</h1>
+    <form action="{{ url_for('moradores.create_morador') }}" method="POST">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf"><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="torre">Torre:</label>
+        <input type="text" id="torre" name="torre"><br>
+        <label for="andar">Andar:</label>
+        <input type="text" id="andar" name="andar"><br>
+        <label for="apartamento">Apartamento:</label>
+        <input type="text" id="apartamento" name="apartamento"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone"><br>
+        <label for="moradorescol">Morador Escol:</label>
+        <input type="text" id="moradorescol" name="moradorescol"><br>
+        <input type="submit" value="Criar">
+    </form>
+    <a href="{{ url_for('moradores.list_moradores') }}">Voltar</a>
+</body>
+</html>

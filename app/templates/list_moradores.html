@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Moradores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Moradores</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>Torre</th>
+                <th>Andar</th>
+                <th>Apartamento</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for morador in moradores %}
+            <tr>
+                <td>{{ morador[0] }}</td>
+                <td>{{ morador[1] }}</td>
+                <td>{{ morador[2] }}</td>
+                <td>{{ morador[3] }}</td>
+                <td>{{ morador[4] }}</td>
+                <td>{{ morador[5] }}</td>
+                <td>{{ morador[6] }}</td>
+                <td>
+                    <a href="{{ url_for('moradores.view_morador', cpf=morador[0]) }}">Visualizar</a>
+                    <a href="{{ url_for('moradores.update_morador', cpf=morador[0]) }}">Editar</a>
+                    <a href="{{ url_for('moradores.delete_morador', cpf=morador[0]) }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('moradores.create_morador') }}">Criar Morador</a>
+</body>
+</html>

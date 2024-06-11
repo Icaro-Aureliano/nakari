@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Terceiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Editar Terceiro</h1>
+    <form action="{{ url_for('terceiros.update_terceiro', coc=terceiro[0]) }}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="coc">CNPJ:</label>
+        <input type="text" id="coc" name="coc" value="{{ terceiro[0] }}" readonly><br>
+        <label for="razao">Razão Social:</label>
+        <input type="text" id="razao" name="razao" value="{{ terceiro[1]}}"><br>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="{{ terceiro[2] }}"><br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco" value="{{ terceiro[3] }}"><br>
+        <label for="servico">Serviço:</label>
+        <input type="text" id="servico" name="servico" value="{{ terceiro[4] }}"><br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" value="{{ terceiro[5] }}"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ terceiro[6] }}"><br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="{{ terceiro[7] }}"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+    <a id="btn_default" href="{{ url_for('terceiros.list_terceiros') }}">Voltar</a>
+</body>
+</html>

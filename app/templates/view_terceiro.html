@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Terceiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Visualizar Terceiro</h1>
+    <p><strong>COC:</strong> {{ terceiro[0] }}</p>
+    <p><strong>Razão Social:</strong> {{ terceiro[1] }}</p>
+    <p><strong>Endereço:</strong> {{ terceiro[2] }}</p>
+    <p><strong>Preço:</strong> {{ terceiro[3] }}</p>
+    <p><strong>Serviço:</strong> {{ terceiro[4] }}</p>
+    <p><strong>Status:</strong> {{ terceiro[5] }}</p>
+    <p><strong>Email:</strong> {{ terceiro[6] }}</p>
+    <p><strong>Telefone:</strong> {{ terceiro[7] }}</p>
+    <a id="btn_default" href="{{ url_for('terceiros.list_terceiros') }}">Voltar</a>
+</body>
+</html>

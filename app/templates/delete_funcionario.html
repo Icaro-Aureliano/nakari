@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deletar Funcionário</title>\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Deletar Funcionário</h1>
+    <form action="{{ url_for('funcionarios.delete_funcionario', cpf=funcionario[0]) }}" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <p>Tem certeza que deseja deletar o funcionário {{ funcionario[1] }}?</p>
+        <input type="submit" value="Deletar">
+    </form>
+    <a id="btn_default" href="{{ url_for('funcionarios.list_funcionarios') }}">Voltar</a>
+
+</body>
+</html>

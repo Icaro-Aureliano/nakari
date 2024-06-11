@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Morador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Visualizar Morador</h1>
+    <p><strong>CPF:</strong> {{ morador[0] }}</p>
+    <p><strong>Nome:</strong> {{ morador[1] }}</p>
+    <p><strong>Torre:</strong> {{ morador[2] }}</p>
+    <p><strong>Andar:</strong> {{ morador[3] }}</p>
+    <p><strong>Apartamento:</strong> {{ morador[4] }}</p>
+    <p><strong>Email:</strong> {{ morador[5] }}</p>
+    <p><strong>Telefone:</strong> {{ morador[6] }}</p>
+    <p><strong>Observação:</strong> {{ morador[7] }}</p>
+    <a id="btn_default" href="{{ url_for('moradores.list_moradores') }}">Voltar</a>
+</body>
+</html>

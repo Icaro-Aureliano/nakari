@@ -1,0 +1,17 @@
+# erro
+    usuario.cpf
+    usuario.nome
+    usuario.cadastro
+# corrigido
+    usuario[0]
+    usuario[2]
+    usuario[3]
+
+falta list_espaco e list_agendamento
+
+# adicionar a todos para facilitar a navegacao:
+<a href="{{ url_for('create_agendamento') }}">Criar Novo Agendamento</a>
+<a href="{{ url_for('list_agendamentos') }}">Voltar</a>
+
+
+criar tabelas de status, prioridade e modalidade

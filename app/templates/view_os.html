@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Ordem de Serviço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Visualizar Ordem de Serviço</h1>
+    <p><strong>Código:</strong> {{ ordem[0] }}</p>
+    <p><strong>Serviço:</strong> {{ ordem[1] }}</p>
+    <p><strong>Descrição:</strong> {{ ordem[2] }}</p>
+    <p><strong>Prioridade:</strong> {{ ordem[3] }}</p>
+    <p><strong>Status:</strong> {{ ordem[4] }}</p>
+    <p><strong>Tempo:</strong> {{ ordem[5] }}</p>
+    <p><strong>Modalidade:</strong> {{ ordem[6] }}</p>
+    <p><strong>Preço:</strong> {{ ordem[7] }}</p>
+    <p><strong>Prestador Nome:</strong> {{ ordem[8] }}</p>
+    <p><strong>Prestador COC:</strong> {{ ordem[9] }}</p>
+    <p><strong>Observações:</strong> {{ ordem[10] }}</p>
+    <p><strong>Apartamento:</strong> {{ ordem[11] }}</p>
+    <p><strong>Moradores CPF:</strong> {{ ordem[12] }}</p>
+    <p><strong>Funcionários CPF:</strong> {{ ordem[13] }}</p>
+    <p><strong>Terceiros COC:</strong> {{ ordem[14] }}</p>
+    <a id="btn_default" href="{{ url_for('os.list_os') }}">Voltar</a>
+</body>
+</html>

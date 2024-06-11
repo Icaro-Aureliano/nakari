@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Ordem de Serviço</title>
+</head>
+<body>
+    <h1>Criar Ordem de Serviço</h1>
+    <form action="/os/create" method="POST">
+        <label for="servico">Serviço:</label>
+        <input type="text" id="servico" name="servico"><br>
+        <label for="ds">Descrição:</label>
+        <input type="text" id="ds" name="ds"><br>
+        <label for="prioridade">Prioridade:</label>
+        <input type="text" id="prioridade" name="prioridade"><br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status"><br>
+        <label for="tempo">Tempo:</label>
+        <input type="date" id="tempo" name="tempo"><br>
+        <label for="modalidade">Modalidade:</label>
+        <input type="text" id="modalidade" name="modalidade"><br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco"><br>
+        <label for="prestador_nom">Nome do Prestador:</label>
+        <input type="text" id="prestador_nom" name="prestador_nom"><br>
+        <label for="prestador_coc">CNPJ do Prestador:</label>
+        <input type="text" id="prestador_coc" name="prestador_coc"><br>
+        <label for="obs">Observações:</label>
+        <input type="text" id="obs" name="obs"><br>
+        <label for="apartamento">Apartamento:</label>
+        <input type="text" id="apartamento" name="apartamento"><br>
+        <label for="moradores_cpf">CPF do Morador:</label>
+        <input type="text" id="moradores_cpf" name="moradores_cpf"><br>
+        <label for="funcionarios_cpf">CPF do Funcionário:</label>
+        <input type="text" id="funcionarios_cpf" name="funcionarios_cpf"><br>
+        <label for="terceiros_coc">CNPJ do Terceiro:</label>
+        <input type="text" id="terceiros_coc" name="terceiros_coc"><br>
+        <input type="submit" value="Criar">
+    </form>
+    <a href="{{ url_for('os.list_os') }}">Voltar</a>
+</body>
+</html>

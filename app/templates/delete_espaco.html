@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Espaço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Deletar Espaço</h1>
+    <p>Tem certeza que deseja deletar o espaço?</p>
+    <p><strong>Código:</strong> {{ espaco[0] }}</p>
+    <p><strong>Nome:</strong> {{ espaco[1] }}</p>
+    <p><strong>Descrição:</strong> {{ espaco[2] }}</p>
+    <p><strong>Status:</strong> {{ espaco[3] }}</p>
+    <p><strong>Capacidade:</strong> {{ espaco[4] }}</p>
+    <form action="{{ url_for('espaco.delete_espaco', codigo=espaco[0]) }}" method="post">
+        <button type="submit">Deletar</button>
+    </form>
+    <a id="btn_default" href="{{ url_for('espaco.list_espacos') }}">Voltar</a>
+</body>
+</html>

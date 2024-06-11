@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Espaço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Editar Espaço</h1>
+    <form action="{{ url_for('espaco.update_espaco', codigo=espaco[0]) }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ espaco[1] }}" required><br>
+
+        <label for="ds">Descrição:</label>
+        <input type="text" id="ds" name="ds" value="{{ espaco[2] }}" required><br>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" value="{{ espaco[3] }}" required><br>
+
+        <label for="capacidade">Capacidade:</label>
+        <input type="number" id="capacidade" name="capacidade" value="{{ espaco[4] }}" required><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+    <a id="btn_default" href="{{ url_for('espaco.list_espacos') }}">Voltar</a>
+</body>
+</html>

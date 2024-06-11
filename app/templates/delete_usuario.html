@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deletar Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Deletar Usuário</h1>
+    <form action="{{ url_for('usuario.delete_usuario', cpf=usuario[0]) }}" method="POST">
+        <p>Tem certeza que deseja deletar o usuário {{ usuario[2] }}?</p>
+        <button type="submit">Deletar</button>
+    </form>
+    <a id="btn_default" href="{{ url_for('usuario.list_usuarios') }}">Voltar</a>
+</body>
+</html>

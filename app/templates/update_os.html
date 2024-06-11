@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Ordem de Serviço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Editar Ordem de Serviço</h1>
+    <form action="/os/update/{{ ordem[0] }}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="servico">Serviço:</label>
+        <input type="text" id="servico" name="servico" value="{{ ordem[1] }}"><br>
+        <label for="ds">Descrição:</label>
+        <input type="text" id="ds" name="ds" value="{{ ordem[2] }}"><br>
+        <label for="prioridade">Prioridade:</label>
+        <input type="text" id="prioridade" name="prioridade" value="{{ ordem[3] }}"><br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" value="{{ ordem[4] }}"><br>
+        <label for="tempo">Tempo:</label>
+        <input type="date" id="tempo" name="tempo" value="{{ ordem[5] }}"><br>
+        <label for="modalidade">Modalidade:</label>
+        <input type="text" id="modalidade" name="modalidade" value="{{ ordem[6] }}"><br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco" value="{{ ordem[7] }}"><br>
+        <label for="prestador_nom">Nome do Prestador:</label>
+        <input type="text" id="prestador_nom" name="prestador_nom" value="{{ ordem[8] }}"><br>
+        <label for="prestador_coc">CNPJ do Prestador:</label>
+        <input type="text" id="prestador_coc" name="prestador_coc" value="{{ ordem[9] }}"><br>
+        <label for="obs">Observações:</label>
+        <input type="text" id="obs" name="obs" value="{{ ordem[10] }}"><br>
+        <label for="apartamento">Apartamento:</label>
+        <input type="text" id="apartamento" name="apartamento" value="{{ ordem[11] }}"><br>
+        <label for="moradores_cpf">CPF do Morador:</label>
+        <input type="text" id="moradores_cpf" name="moradores_cpf" value="{{ ordem[12] }}"><br>
+        <label for="funcionarios_cpf">CPF do Funcionário:</label>
+        <input type="text" id="funcionarios_cpf" name="funcionarios_cpf" value="{{ ordem[13] }}"><br>
+        <label for="terceiros_coc">CNPJ do Terceiro:</label>
+        <input type="text" id="terceiros_coc" name="terceiros_coc" value="{{ ordem[14] }}"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+    <a id="btn_default" href="{{ url_for('os.list_os') }}">Voltar</a>
+</body>
+</html>

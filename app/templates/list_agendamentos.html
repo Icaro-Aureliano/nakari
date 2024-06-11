@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Agendamentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Listagem de Agendamentos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Data de Emissão</th>
+                <th>Data de Agendamento</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agendamento in agendamentos %}
+            <tr>
+                <td>{{ agendamento[0] }}</td>
+                <td>{{ agendamento[1] }}</td>
+                <td>{{ agendamento[2] }}</td>
+                <td>{{ agendamento[3] }}</td>
+                <td>
+                    <a href="{{ url_for('agendamento.view_agendamento', codigo=agendamento[0]) }}">Visualizar</a>
+                    <a href="{{ url_for('agendamento.update_agendamento', codigo=agendamento[0]) }}">Editar</a>
+                    <a href="{{ url_for('agendamento.delete_agendamento', codigo=agendamento[0]) }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('agendamento.create_agendamento') }}">Criar Novo Agendamento</a>
+</body>
+</html>

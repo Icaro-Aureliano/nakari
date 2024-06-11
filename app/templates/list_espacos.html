@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Espaços</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Listagem de Espaços</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Capacidade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for espaco in espacos %}
+            <tr>
+                <td>{{ espaco[0] }}</td>
+                <td>{{ espaco[1] }}</td>
+                <td>{{ espaco[2] }}</td>
+                <td>{{ espaco[3] }}</td>
+                <td>{{ espaco[4] }}</td>
+                <td>
+                    <a href="{{ url_for('espaco.view_espaco', codigo=espaco[0]) }}">Visualizar</a>
+                    <a href="{{ url_for('espaco.update_espaco', codigo=espaco[0]) }}">Editar</a>
+                    <a href="{{ url_for('espaco.delete_espaco', codigo=espaco[0]) }}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a id="btn_default" href="{{ url_for('espaco.create_espaco') }}">Criar Novo Espaço</a>
+</body>
+</html>

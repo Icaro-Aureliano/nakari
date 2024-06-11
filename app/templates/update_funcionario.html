@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Funcionário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Editar Funcionário</h1>
+    <form action="{{ url_for('funcionarios.update_funcionario', cpf=funcionario[0]) }}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" value="{{ funcionario[0] }}" readonly><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ funcionario[1] }}"><br>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="{{ funcionario[2] }}"><br>
+        <label for="admissao">Admissão:</label>
+        <input type="date" id="admissao" name="admissao" value="{{ funcionario[3] }}"><br>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" name="rg" value="{{ funcionario[4] }}"><br>
+        <label for="salario">Salário:</label>
+        <input type="text" id="salario" name="salario" value="{{ funcionario[5] }}"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+    <a id="btn_default" href="{{ url_for('funcionarios.list_funcionarios') }}">Voltar</a>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+Estrutura Geral
+    Controllers
+    Models
+    Repositories
+    Services
+    Static
+    Templates
+    Config
+    Initialization
+    Main
+
+Escalabilidade
+    Facilidade de Adição de Funcionalidades
+    Distribuição de Carga
+    Modularidade
+
+Manutenções Futuras e Adicionais
+    Facilidade de Depuração
+    Testabilidade
+    Reutilização de Código
+    Atualizações e Upgrades
+    Documentação e Treinamento
