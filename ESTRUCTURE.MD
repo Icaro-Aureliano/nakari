@@ -2,9 +2,12 @@ main.py
 app/
     __init__.py
     static/
-        (nenhum arquivo)
+        css/
+            styles.css
+        js/
+            EMPYT
     templates/
-        (htmls já feitos anteriormente)
+        INUMERATES FILES =)
     controllers/
         __init__.py
         agendamento_controller.py
