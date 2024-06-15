@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('agendamento.list_agendamentos') }}">Agendamentos</a></li>
+                <li><a href="{{ url_for('espaco.list_espacos') }}">Espaços</a></li>
+                <li><a href="{{ url_for('usuario.list_usuarios') }}">Usuários</a></li>
+                <li><a href="{{ url_for('moradores.list_moradores') }}">Moradores</a></li>
+                <li><a href="{{ url_for('funcionarios.list_funcionarios') }}">Funcionários</a></li>
+                <li><a href="{{ url_for('terceiros.list_terceiros') }}">Terceiros</a></li>
+                <li><a href="{{ url_for('os.list_os') }}">Ordens de Serviço</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
